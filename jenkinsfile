@@ -2,8 +2,8 @@ pipeline{
     agent none
     environment{
         IMAGE_NAME='manoranjan555/deploy:php$BUILD_NUMBER'
-        DEV_SERVER_IP='ec2-user@ip'
-        TEST_SERVER_IP=''
+        DEV_SERVER_IP='ec2-user@ip13.233.29.175'
+        TEST_SERVER_IP='ec--user@ip13.201.87.38'
     }
     stages{
         stage('Build the dockerimage for php and push to dockerhub on DEV_SERVER'){
