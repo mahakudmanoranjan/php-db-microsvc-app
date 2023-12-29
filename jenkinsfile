@@ -2,8 +2,8 @@ pipeline{
     agent none
     environment{
         IMAGE_NAME='manoranjan555/deploy:php$BUILD_NUMBER'
-        DEV_SERVER_IP='ec2-user@ip13.233.29.175'
-        TEST_SERVER_IP='ec--user@ip13.201.87.38'
+        DEV_SERVER_IP='ec2-user@ip65.2.29.149'
+        TEST_SERVER_IP='ec--user@ip43.205.241.7'
     }
     stages{
         stage('Build the dockerimage for php and push to dockerhub on DEV_SERVER'){
@@ -26,7 +26,7 @@ pipeline{
         
     stage('Run the php_db app on test server on TEST_SERVER'){
             
-        steps{
+            steps{
                 script{
                     sshagent(['TEST_SERVER']) {
                         withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
