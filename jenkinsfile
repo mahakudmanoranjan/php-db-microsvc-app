@@ -1,5 +1,5 @@
 pipeline{
-    agent none
+    agent any
     environment{
         IMAGE_NAME='manoranjan555/deploy:php$BUILD_NUMBER'
         DEV_SERVER_IP='ec2-user@ip65.2.29.149'
