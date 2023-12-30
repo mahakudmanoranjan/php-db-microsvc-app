@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+    web:
+      image: manoranjan555/deploy:php9
+      ports:
+      - "8001:80"
+      deploy:
+          replicas: 2
+      depends_on:
+      - mysql
+    mysql:
+      image: manoranjan555/deploy:mysql
+      volumes:
+      - db_data:/var/lib/mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: password
+        MYSQL_DATABASE: mydatabase
+volumes:
+   db_data: {}
